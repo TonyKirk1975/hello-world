@@ -1,0 +1,7 @@
+# MASM64 build artifacts
+*.obj
+*.exe
+*.pdb
+*.ilk
+*.lib
+*.exp
