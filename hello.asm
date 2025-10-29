@@ -39,15 +39,12 @@ main proc
     ; void ExitProcess(UINT uExitCode)
     xor ecx, ecx            ; Exit code 0
     call ExitProcess
-    
-    ; Should never reach here, but restore stack just in case
-    add rsp, 40h
-    ret
+    ; ExitProcess never returns
 main endp
 
 .data
 hello_msg db "Hello, World!", 13, 10
 hello_msg_len equ $ - hello_msg
-bytes_written dq 0
+bytes_written dq 0          ; Required by WriteConsoleA, stores number of chars written
 
 end
